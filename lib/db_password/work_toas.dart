@@ -24,7 +24,7 @@ class WorkToas extends GetView<PageLogic>{
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.rjhglwp.value)),
+              url: WebUri.uri(Uri.parse(controller.zrmgfpk.value)),
             ),
             onWebViewCreated: (c) {
               controller.webViewController = c;

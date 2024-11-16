@@ -11,8 +11,8 @@ class PasswordGenView extends GetView<PageLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.schowalter.value
-              ? const CircularProgressIndicator(color: Colors.orange)
+          () => controller.fisher.value
+              ? const CircularProgressIndicator(color: Colors.blueAccent)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class PasswordGenView extends GetView<PageLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.eawubo();
+              controller.lcqkzwh();
             },
             icon: const Icon(
               Icons.restart_alt,

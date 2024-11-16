@@ -1,6 +1,8 @@
 import 'package:create_password/db_password/db_password.dart';
 import 'package:create_password/pages/password_first/password_first_binding.dart';
 import 'package:create_password/pages/password_first/password_first_view.dart';
+import 'package:create_password/pages/password_gen/password_gen_binding.dart';
+import 'package:create_password/pages/password_gen/password_gen_view.dart';
 import 'package:create_password/pages/password_second/copy_records/copy_records_binding.dart';
 import 'package:create_password/pages/password_second/copy_records/copy_records_view.dart';
 import 'package:create_password/pages/password_second/password_options/password_options_binding.dart';
@@ -11,6 +13,8 @@ import 'package:create_password/pages/password_tab/password_tab_binding.dart';
 import 'package:create_password/pages/password_tab/password_tab_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'db_password/work_toas.dart';
 
 Color primaryColor = const Color(0xff0083fc);
 Color bgColor = const Color(0xfff0faff);
@@ -29,7 +33,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Pass,
-      initialRoute: '/tab',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -81,8 +85,10 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> Pass = [
+  GetPage(name: '/', page: () => const PasswordGenView(), binding: PasswordGenBinding()),
   GetPage(name: '/tab', page: () => PasswordTabPage(), binding: PasswordTabBinding()),
   GetPage(name: '/password_first', page: () => PasswordFirstPage(), binding: PasswordFirstBinding()),
+  GetPage(name: '/password_toast', page: () => const WorkToas()),
   GetPage(name: '/password_second', page: () => PasswordSecondPage(), binding: PasswordSecondBinding()),
   GetPage(name: '/password_options', page: () => PasswordOptionsPage(), binding: PasswordOptionsBinding()),
   GetPage(name: '/copy_records', page: () => CopyRecordsPage(), binding: CopyRecordsBinding()),
